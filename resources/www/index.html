@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[TEST DEV BOOTSTRAP]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  </head>
+  <body> <!-- onload="test_cljs_fix.main._main()">
+         <!-- * uncomment above and comment last script tag to get a working page
+                or just remove the dirac preload from project.clj and rebuild -->
+    <div id="app-main"></div>
+    <script>
+      window.process = {NODE_ENV : "development"};
+    </script>
+    <script src="/devel-cljs/devel.js"></script>
+    <script>
+      test_cljs_fix.main._main()
+    </script>
+  </body>
+</html>
