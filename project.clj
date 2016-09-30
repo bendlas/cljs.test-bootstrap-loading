@@ -1,7 +1,7 @@
 (defproject test-cljs-fix "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.9.0-alpha13"]
                  [org.clojure/clojurescript "1.9.229"]
-                 [binaryage/dirac "0.6.7"]
+                 ;; [binaryage/dirac "0.6.7"]
                  [ring "1.5.0"]]
 
   :resource-paths ["target/gen-resources" "resources"]
@@ -14,7 +14,10 @@
               [{:id "devel"
                 :source-paths ["src"]
                 :compiler {:main test-cljs-fix.main
-                           :preloads [dirac.runtime.preload]
+                           :preloads [
+                                      ;; dirac.runtime.preload
+                                      test-cljs-fix.preload
+                                      ]
                            :output-to "target/gen-resources/www/devel-cljs/devel.js"
                            :output-dir "target/gen-resources/www/devel-cljs"
                            :asset-path "/devel-cljs"
